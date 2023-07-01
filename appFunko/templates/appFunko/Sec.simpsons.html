@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Los Simpsons</title>
+  <link rel="stylesheet" href="{% static 'css/stylesimpsons.css'%}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="icon" type="image/icon.png" href="{% static 'img/icon.png'%}">
+  <script src="{% static 'js/funciones.js'%}"async></script>
+  
+</head>
+  
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid menu__barr">
+        <a class="navbar-brand" href="index">
+         <img src="{% static 'img/logo.png'%}" alt="" width="200px" class="img-fondo" >
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros">Nosotros</a>
+            </li>
+            
+            <li class="nav-item">
+              <a href="#contacto" class="nav-link ">Contacto</a>
+            </li>
+          </ul>
+
+          <form class="d-flex btn_buscar" role="search">
+            <input class="form-control me-2 barra" type="search" placeholder="Buscar productos" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+
+          <li class="nav-item nav__carr">
+            <a href="carrito" class="nav-link " data-bs-toggle="moda1" data-bs-target="">
+              <i class="fas fa-cart-shopping">Carrito</i>
+              <span class="badge bg-secondary position-absolute translate-middle bg-warning">4</span>
+            </a>
+          </li>
+          <li class="nav-item login__icon">
+            <a href="login" class="login__icon " data-bs-toggle="moda1" data-bs-target="">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <div class="container_algolia">
+      <div class="filtrar" style="font-family: serif;">
+        <select name="algolia-order-by">
+          <option disabled>Ordenar por</option>
+          <option value="price_asc">Menor a Mayor Precio</option>
+          <option value="price_desc">Mayor a Menor Precio</option>
+          <option selected value="score">Relevancia</option>
+        </select>
+      </div>
+    </div>
+        
+    <div class="container">
+      {% for f in productos %}
+        {% if f.categoria_id == 2%}
+          {% if f.estadoFunko_id == 1%}
+            <div class="product">
+              {% if f.imagen %}
+                <img src="{{f.imagen.url}}" alt=""class="img-product">
+              {% endif %}
+                <span class="badge bg-secondary position-absolute translate-middle bg-warning" >Nuevo</span>
+                <div class="producto__description">                
+                    <h6 class="product_categoria">{{f.categoria}}</h6>
+                    <h5 class="product__title">{{f.nombre}}</h5>
+                <h5 class="product__title">{{f.detalle}}</h5> 
+                    <span class="producto__price">${{f.precio}}</span>
+                    <BUtton class="fa-sharp fa-solid fa-cart-plus">AGREGAR AL CARRO</BUtton>
+                </div>   
+            </div>
+          {% endif%}
+          {% if f.estadoFunko_id != 1%}
+            <div class="product">
+              {% if f.imagen %}
+                <img src="{{f.imagen.url}}" alt=""class="img-product">
+              {% endif %}
+                <div class="producto__description">                
+                    <h6 class="product_categoria">{{f.categoria}}</h6>
+                    <h5 class="product__title">{{f.nombre}}</h5>
+                <h5 class="product__title">{{f.detalle}}</h5> 
+                    <span class="producto__price">${{f.precio}}</span>
+                    <BUtton class="fa-sharp fa-solid fa-cart-plus">AGREGAR AL CARRO</BUtton>
+                </div>   
+            </div>
+          {% endif%}
+        {% endif %}
+      {% endfor %}
+      
+    </div>
+
+        <div class="Page__navigation__example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <span class="page-link" style="color: black;">Anterior</span>
+            </li>
+            <li class="page-item active" aria-current="page">
+              <span class="page-link"style="color: black;">1</span>
+            </li>
+            <li class="page-item "><a class="page-link" style="color: black;" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" style="color: black;" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" style="color: black;" href="#">Proxima</a>
+            </li>
+          </ul>
+        </div> 
+    
+      <section class="container-tips ">
+        <div class="row ">
+    
+          <div class="col-sm">
+            <i class="fa-solid fa-truck"></i>
+            <h2 class="tip__title"> DELIVERY</h2>
+            <p class="tip__txt">Envío por pagar</p>
+          </div>
+    
+          <div class="col-sm">
+            <i class="fa-regular fa-credit-card"></i>
+            <h2 class="tip__title">PAGO SEGURO</h2>
+            <p class="tip__txt">Webpay</p>
+          </div>
+    
+          <div class="col-sm">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            <h2 class="tip__title">GARANTÍA</h2>
+            <p class="tip__txt">Asegurada</p>
+          </div>
+    
+          <div class="col-sm">
+            <i class="fa-solid fa-headphones"></i>
+            <h2 class="tip__title">ATENCIÓN 24/7</h2>
+            <p class="tip__txt">Listos para ti</p>
+          </div>
+    
+        </div>
+      </section>
+      <section class="container-final">
+        <div class="row ">
+    
+          <div class="col-sm">
+            <h2 class="final__title">PÁGINAS</h2>
+    
+            <ul class="final__txt">
+              <li><a href="index" class="final__btn">Inicio</a></li>
+              <li><a href="nosotros" class="final__btn">Nosotros</a></li>
+              <li><a href="index" class="final__btn">Tienda</a></li>
+              <li><a href="carrito" class="final__btn">Carrito</a></li>
+              <li><a href="#contacto" class="final__btn">Contacto</a></li>
+            </ul>
+    
+          </div>
+    
+          <div class="col-sm">
+            <a href="contacto" id="contacto"></a>
+            <h2 class="final__title">CONTACTO</h2>
+            <pi class="fa-solid fa-location-dot"></pi>
+            <p class="final__txt">X Region de Los Lagos</p>
+            <pi class="fa-solid fa-clock"></pi>
+            <p class="final__txt">Lun- Sab 10:00 AM- 19:00 PM</p>
+            <pi class="fa-solid fa-phone"></pi>
+            <p class="final__txt">+56 9 8798 0093</p>
+          </div>
+    
+          <div class="col-sm">
+            <h2 class="final__title">SIGUENOS</h2>
+    
+            <ul class="iconos">
+    
+              <li><a href="https://www.instagram.com/">
+                  <pi class="fa-brands fa-instagram"></pi>
+                </a></li>
+              <li><a href="https://es-la.facebook.com/">
+                  <pi class="fa-brands fa-facebook"></pi>
+                </a></li>
+              <li><a href="https://www.tiktok.com/es/">
+                  <pi class="fa-brands fa-tiktok"></pi>
+                </a></li>
+              <li><a href="https://www.youtube.com/">
+                  <pi class="fa-brands fa-youtube"></pi>
+                </a></li>
+            </ul>
+          </div>
+    
+        </div>
+      </section>
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"></script>  
+
+</body>
+</html>
