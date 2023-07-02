@@ -18,7 +18,7 @@
 <body>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid menu__barr">
-            <a class="navbar-brand" href="index"><img src="{% static 'img/logo.png'%}" alt="" width="200px"></a>
+            <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'img/logo.png'%}" alt="" width="200px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -26,14 +26,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index">Inicio</a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="nosotros">Nosotros</a>
+                  <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
                 </li>
                 
                 <li class="nav-item">
-                  <a href="index#contacto" class="nav-link ">Contacto</a>
+                  <a href="{% url 'index' %}#contacto" class="nav-link ">Contacto</a>
                 </li>
               </ul>
     
@@ -48,7 +48,7 @@
                 </a>
               </li>
               <li class="nav-item login__icon">
-                <a href="login" class="login__icon " data-bs-toggle="moda1" data-bs-target="">
+                <a href="{% url 'login' %}" class="login__icon " data-bs-toggle="moda1" data-bs-target="">
                   <i class="fa-solid fa-user"></i>
                 </a>
               </li>
@@ -145,7 +145,7 @@
       <div class="envio">
        
         <h5>Puedes Retirar Tu Compra!</h5>
-        <a href="map"><img src="{% static 'img/car/google.png'%}" alt=""></a>
+        <a href="{% url 'map' %}"><img src="{% static 'img/car/google.png'%}" alt=""></a>
         <h6>Busca tu tienda más cercana</h6>
         <div class="cupon">
           <h5>¿Tienes Un Cupón De Descuento?</h5>
