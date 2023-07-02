@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +70,7 @@
         </select>
       </div>
     </div>
-        
+
     <div class="container">
       {% for f in productos %}
         {% if f.categoria_id == 2%}
@@ -83,7 +84,7 @@
                     <h6 class="product_categoria">{{f.categoria}}</h6>
                     <h5 class="product__title">{{f.nombre}}</h5>
                 <h5 class="product__title">{{f.detalle}}</h5> 
-                    <span class="producto__price">${{f.precio}}</span>
+                    <span class="producto__price">${{f.precio | intcomma}}</span>
                     <BUtton class="fa-sharp fa-solid fa-cart-plus">AGREGAR AL CARRO</BUtton>
                 </div>   
             </div>
@@ -97,7 +98,7 @@
                     <h6 class="product_categoria">{{f.categoria}}</h6>
                     <h5 class="product__title">{{f.nombre}}</h5>
                 <h5 class="product__title">{{f.detalle}}</h5> 
-                    <span class="producto__price">${{f.precio}}</span>
+                    <span class="producto__price">${{f.precio | intcomma}}</span>
                     <BUtton class="fa-sharp fa-solid fa-cart-plus">AGREGAR AL CARRO</BUtton>
                 </div>   
             </div>
@@ -106,7 +107,6 @@
       {% endfor %}
       
     </div>
-
         <div class="Page__navigation__example">
           <ul class="pagination justify-content-center">
             <li class="page-item disabled">

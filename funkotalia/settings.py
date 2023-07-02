@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'appFunko',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [

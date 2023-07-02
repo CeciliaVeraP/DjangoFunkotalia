@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +79,7 @@
                       <h6 class="product_categoria">{{f.categoria}}</h6>
                       <h5 class="product__title">{{f.nombre}}</h5>
                   <h5 class="product__title">{{f.detalle}}</h5> 
-                      <span class="producto__price">${{f.precio}}</span>
+                      <span class="producto__price">${{f.precio | intcomma}}</span>
                       <BUtton class="fa-sharp fa-solid fa-cart-plus">AGREGAR AL CARRO</BUtton>
                   </div>   
               </div>
@@ -90,10 +91,10 @@
                 {% endif %}
                   <div class="producto__description">                
                       <h6 class="product_categoria">{{f.categoria}}</h6>
-                      <h5 class="product__title">{{f.nombre}}</h5>
-                  <h5 class="product__title">{{f.detalle}}</h5> 
-                      <span class="producto__price">${{f.precio}}</span>
-                      <BUtton class="fa-sharp fa-solid fa-cart-plus">AGREGAR AL CARRO</BUtton>
+                      <h5 class="product__title">{{f.nombre}}</h5>                   
+                      <h5 class="product__title">{{f.detalle}}</h5> 
+                      <span class="producto__price">${{f.precio | intcomma}}</span>             
+                      <Button class="fa-sharp fa-solid fa-cart-plus">AGREGAR AL CARRO</Button>
                   </div>   
               </div>
             {% endif%}
