@@ -14,4 +14,8 @@ urlpatterns = [
     path('Sec.Disney', views.disney , name='Sec.Disney'),
     path('Sec.simpsons', views.simpsons , name='Sec.simpsons'),
     path('Sec.anime', views.anime , name='Sec.anime'),
+    path('agregar-producto', views.agregar_producto , name='agregar-producto'),
+    path('listar-producto', views.listar_funko , name='listar-producto'),
+    path('modificar-producto/<id>', views.modificar_funko , name='modificar-producto'),
+    path('eliminat-producto/<id>', views.eliminar_funko , name='eliminar-producto'),
 ]
