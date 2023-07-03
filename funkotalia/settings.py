@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-jtkiw*kj&xbtvp4=-zj0v4^wqt+^u#h229_31v4oz_6=h2lc0a
 DEBUG = True
 
 ALLOWED_HOSTS = []
+LOGIN_REDIRECT_URL = 'listar-producto'
+LOGOUT_REDIRECT_URL = '/'
 
 
 # Application definition
