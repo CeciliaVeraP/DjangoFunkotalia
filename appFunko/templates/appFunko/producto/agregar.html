@@ -41,7 +41,14 @@
               <li class="nav-item">
                 <a href="{% url 'nosotros' %}#contacto" class="nav-link ">Contacto</a>
               </li>
-            </ul>
+            
+            <li class="nav-item">
+              <a href="{% url 'agregar-producto' %}" class="nav-link ">Agregar</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'listar-producto' %}" class="nav-link ">Ver todos</a>
+            </li>
+          </ul>
     
             <form class="d-flex btn_buscar" role="search">
               <input class="form-control me-2 barra" type="search" placeholder="Buscar productos" aria-label="Search">

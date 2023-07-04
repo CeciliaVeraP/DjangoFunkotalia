@@ -116,7 +116,7 @@ img {
     
     grid-gap: 20px; */
     font-family: 'Courier New', Courier, monospace;
-    background: url("css/fondologo5.png") space center;
+    background: url(fondologo5.png) space center;
 }
 
 .product{
@@ -245,7 +245,7 @@ img {
     
 }
 .menu__barr{
-    background: url("css/fondo5.png") no-repeat center center fixed;
+    background: url(fondo5.png) no-repeat center center fixed;
     background-size: cover;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.5em;
