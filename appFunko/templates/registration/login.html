@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" style="color: aliceblue;">
                         <h2>Inicia Sesion</h2>
                         <div class="d-flex justify-content-end social_icon">
                             <span>
@@ -46,12 +46,12 @@
                             </span>
                         </div>
                         <hr>
-                        <form action="" method="post">
+                        <form action="" method="post" style="color: aliceblue;">
                             {% csrf_token %}
                             
                             {{ form | crispy}}
 
-                            <input type="reset" value="Cancelar" class="btn btn-secondary">
+                            <input type="button" value="Cancelar" class="btn btn-secondary" > 
                             &nbsp;
                             <input type="submit" value="ingresar" class="btn btn-success float-right">
                         </form>

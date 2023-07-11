@@ -1,8 +1,10 @@
+alert();
 if(document.readyState=='loading'){
     document.addEventListener('DOMContentLoaded',ready) 
 }else{
     ready();
 }
+
 //funcion para eliminar productos del carrito
 function ready(){
     var botonesEliminarProduct = document.getElementsByClassName('btn-eliminar');
@@ -23,13 +25,13 @@ function ready(){
         button.addEventListener('click', restarCantidad);
     }
 
-    /* //Funcion para el boton agregar al carrito
-    var botonesAgregarAlCarrito = document.getElementsByClassName('add-to-cart-global');
+    //Funcion para el boton agregar al carrito
+    var botonesAgregarAlCarrito = document.getElementsByClassName('fa-sharp');
     for(var i = 0; i<botonesAgregarAlCarrito.length; i++){
         var button=botonesAgregarAlCarrito[i];
         button.addEventListener('click', agregarAlCarroClicked);
 
-    } */
+    }
 }
 function eliminarProductCarrito(event){
     var buttonClicked = event.target;
@@ -97,8 +99,11 @@ function restarCantidad(event){
     
     
 }   
-/* function agregarAlCarroClicked(event){
-    var button = event.target;
+function agregarAlCarroClicked(event){
+  alert();
+  
+}
+  /*   var button = event.target;
     var product = button.parentElement;
     var titulo = product.getElementsByClassName('product__title')[0].innerText;
     console.log(titulo);
@@ -115,8 +120,8 @@ function agregarProductAlCarrito(titulo, precio, imagenSrc){
     var productCarrito = document.getElementsByClassName('carrito')[0];
 
     productCarrito.append(product);
- }   
-     */
+ }    
+    
 
 //FUNCION PARA VALIDAR RUT
 // Capturando el DIV alerta y mensaje
