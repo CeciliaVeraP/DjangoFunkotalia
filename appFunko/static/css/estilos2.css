@@ -116,7 +116,8 @@ img {
     
     grid-gap: 20px; */
     font-family: 'Courier New', Courier, monospace;
-    background: url(fondologo5.png) space center;
+    background-color: #EDE8DF;
+    ;
 }
 
 .product{
@@ -239,13 +240,13 @@ img {
     
 }
 .navbar-brand{
-    width: 300px;
+    width: 150px;
     display: block;
     
     
 }
 .menu__barr{
-    background: url(fondo5.png) no-repeat center center fixed;
+    background-color: #EDE8DF;
     background-size: cover;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.5em;
